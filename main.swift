@@ -98,3 +98,64 @@ func countRows() {
         amountOfColumns += 1;
     }
 }
+
+func isNorthClear() -> Bool {
+    if isFacingNorth() {
+        return isFrontClear()
+    } else if isFacingSouth() {
+        turnLeft()
+        var isClear = isLeftClear()
+        turnSouth()
+        return isClear;
+    } else if isFacingWest() {
+        return isRightClear()
+    } else if isFacingEast() {
+        return isLeftClear()
+    }
+}
+
+func isEastClear() -> Bool {
+    if isFacingEast() {
+        return isFrontClear()
+    } else if isFacingWest() {
+        turnLeft()
+        var isClear = isLeftClear()
+        turnWest()
+        return isClear;
+    } else if isFacingNorth() {
+        return isRightClear()
+    } else if isFacingSouth() {
+        return isLeftClear()
+    }
+}
+
+func isSouthClear() -> Bool {
+    if isFacingSouth() {
+        return isFrontClear()
+    } else if isFacingNorth() {
+        turnLeft()
+        var isClear = isLeftClear()
+        turnNorth()
+        return isClear;
+    } else if isFacingWest() {
+        return isLeftClear()
+    } else if isFacingEast() {
+        return isRightClear()
+    }
+}
+
+
+func isWestClear() -> Bool {
+    if isFacingWest() {
+        return isFrontClear()
+    } else if isFacingEast() {
+        turnLeft()
+        var isClear = isLeftClear()
+        turnWest()
+        return isClear;
+    } else if isFacingSouth() {
+        return isRightClear()
+    } else if isFacingNorth() {
+        return isLeftClear()
+    }
+}
