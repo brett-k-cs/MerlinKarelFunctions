@@ -109,7 +109,7 @@ func isNorthClear() -> Bool {
         return isClear;
     } else if isFacingWest() {
         return isRightClear()
-    } else if isFacingEast() {
+    } else {
         return isLeftClear()
     }
 }
@@ -124,7 +124,7 @@ func isEastClear() -> Bool {
         return isClear;
     } else if isFacingNorth() {
         return isRightClear()
-    } else if isFacingSouth() {
+    } else {
         return isLeftClear()
     }
 }
@@ -139,7 +139,7 @@ func isSouthClear() -> Bool {
         return isClear;
     } else if isFacingWest() {
         return isLeftClear()
-    } else if isFacingEast() {
+    } else {
         return isRightClear()
     }
 }
@@ -155,7 +155,7 @@ func isWestClear() -> Bool {
         return isClear;
     } else if isFacingSouth() {
         return isRightClear()
-    } else if isFacingNorth() {
+    } else {
         return isLeftClear()
     }
 }
